@@ -4,157 +4,170 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kamerkijker 010 · Eerst zien, dan betalen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Uw kind heeft een kamer in Rotterdam gevonden maar zit nog in het buitenland? Een Rotterdamse student gaat langs en laat alles live via video zien. Pas daarna maakt u geld over.">
-<meta name="theme-color" content="#0f6b5c">
+<meta name="theme-color" content="#2338f5">
+<meta property="og:title" content="Kamerkijker 010 · See it before you pay">
+<meta property="og:description" content="A local student checks your Rotterdam room, live on video, before you send a deposit. From €19.">
+<meta property="og:image" content="../assets/media/still-room.jpg">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="en" href="../">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="preload" as="image" href="../assets/media/hero-poster.jpg">
 </head>
 <body>
 <a class="skip" href="#main">Naar de inhoud</a>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4m0 0h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4l9 16H3l9-16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4m0 3v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 10l5-3v10l-5-3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4l9 16H3l9-16z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 10v4m0 3v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-  <symbol id="i-door" viewBox="0 0 64 64"><rect x="16" y="8" width="32" height="50" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="40" cy="34" r="2.5" fill="currentColor"/><path d="M8 58h48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-link" viewBox="0 0 64 64"><path d="M27 37a10 10 0 0 0 14 0l9-9a10 10 0 0 0-14-14l-4 4" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M37 27a10 10 0 0 0-14 0l-9 9a10 10 0 0 0 14 14l4-4" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></symbol>
-  <symbol id="i-registry" viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 20h24M20 29h24M20 38h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="44" cy="46" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M50 52l5 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-report" viewBox="0 0 64 64"><rect x="12" y="6" width="40" height="52" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="20" r="4" fill="currentColor"/><circle cx="32" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="40" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 34h24M20 42h24M20 50h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-decide" viewBox="0 0 64 64"><path d="M32 8v48M14 20h36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M14 20l-8 16a8 8 0 0 0 16 0l-8-16zM50 20l-8 16a8 8 0 0 0 16 0l-8-16z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M22 56h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-people" viewBox="0 0 48 48"><circle cx="18" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M5 40c1-7 6-11 13-11s12 4 13 11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M36 26c4 1 7 4 7.5 9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-globe" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 24h36M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
-  <symbol id="i-scale" viewBox="0 0 48 48"><path d="M24 6v36M10 42h28M8 14h32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 14l-5 12a5 5 0 0 0 10 0L8 14zM40 14l-5 12a5 5 0 0 0 10 0l-5-12z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-registry" viewBox="0 0 24 24"><rect x="4" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 8h6M8 12h6M8 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="17.5" cy="17.5" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-report" viewBox="0 0 64 64"><rect x="12" y="6" width="40" height="52" rx="4" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="20" r="4" fill="currentColor"/><circle cx="32" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="40" cy="20" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M20 34h24M20 42h24M20 50h12" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-decide" viewBox="0 0 64 64"><path d="M32 8v48M14 20h36" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M14 20l-8 16a8 8 0 0 0 16 0l-8-16zM50 20l-8 16a8 8 0 0 0 16 0l-8-16z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M22 56h20" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M17 6.5A7 7 0 1 0 17 17.5M4 10h9M4 14h9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></symbol>
 </svg>
+
+<div class="topbar"><div class="wrap"><span class="live" aria-hidden="true"></span><span>Oplichters zeggen <b>“betaal vandaag”</b>. Vraag het eerst aan ons: online check binnen 24 uur.</span></div></div>
 
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Kamerkijker 010 home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="var(--accent)"/><path d="M6 20c3.6-6 8.4-9 14-9s10.4 3 14 9c-3.6 6-8.4 9-14 9s-10.4-3-14-9z" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linejoin="round"/><circle cx="20" cy="18.4" r="3.2" fill="var(--accent-ink)"/><path d="M18.6 20.5h2.8l.8 5h-4.4z" fill="var(--accent-ink)"/></svg>
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#ffd43b"/><path d="M6 20c3.6-6 8.4-9 14-9s10.4 3 14 9c-3.6 6-8.4 9-14 9s-10.4-3-14-9z" fill="none" stroke="#0b1033" stroke-width="2.6" stroke-linejoin="round"/><circle cx="20" cy="18.4" r="3.2" fill="#0b1033"/><path d="M18.6 20.5h2.8l.8 5h-4.4z" fill="#0b1033"/></svg>
       <span>Kamerkijker <b>010</b></span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#how">Zo werkt het</a></li>
       <li><a href="#pricing">Prijzen</a></li>
-      <li><a href="#ouders">Voor ouders</a></li>
+      <li><a href="#parents">Voor ouders</a></li>
       <li><a href="#faq">Vragen</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-tools">
       <a class="lang" href="../" hreflang="en" lang="en">EN</a>
-      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Wissel licht of donker">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg>
-      </button>
-      <a class="btn btn-primary magnetic" href="#book">Boek een check</a>
-      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Wissel licht of donker"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+      <a class="btn btn-sun magnetic" href="#book" data-pkg="room">Boek een check</a>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </div>
   </div>
   <div class="progress" aria-hidden="true"></div>
 </header>
 
 <main id="main">
-<section class="hero">
+<section class="hero" id="hero">
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow" data-hero>Kamerchecks in Rotterdam · door studenten</span>
       <h1 aria-label="Eerst zien, dan betalen.">
         <span class="line"><span>Eerst zien,</span></span>
         <span class="line"><span>dan</span></span>
-        <span class="line"><span><em>betalen.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 80 4, 200 4, 296 12"/></svg></em></span></span>
+        <span class="line"><span class="hl">betalen.</span></span>
       </h1>
-      <p class="hero-sub" data-hero>Uw kind of huisgenoot heeft een kamer in Rotterdam gevonden, maar zit nog in het buitenland? Een Rotterdamse student van ons gaat langs, checkt de kamer, de straat en de echte eigenaar, en laat alles live via video zien. Pas daarna maakt u geld over.</p>
-      <div class="hero-cta" data-hero>
-        <a class="btn btn-primary magnetic" href="#book" data-pkg="room">Boek een Kamercheck <span class="price">€59</span></a>
-        <a class="btn btn-ghost magnetic" href="#book" data-pkg="online">Online Check <span class="price">€19</span></a>
-      </div>
-      <ul class="hero-meta" data-hero>
-        <li><svg aria-hidden="true"><use href="#i-clock"/></svg>Binnen 48 uur gecheckt</li>
-        <li><svg aria-hidden="true"><use href="#i-shield"/></svg>Wij werken alleen voor de huurder, nooit voor verhuurders</li>
+      <p class="hero-sub" data-hero>Uw kind heeft een kamer in Rotterdam gevonden, maar zit nog in het buitenland? Een Rotterdamse student van ons gaat langs, checkt de kamer, de straat en <strong>de echte eigenaar</strong>, en laat alles live via video zien. Pas daarna maakt u geld over.</p>
+      <form class="ad-form" id="ad-form" data-hero novalidate>
+        <div class="field-wrap">
+          <svg class="link" aria-hidden="true"><use href="#i-link"/></svg>
+          <label class="sr-only" for="hero-ad">Link naar de advertentie</label>
+          <input id="hero-ad" type="url" inputmode="url" placeholder="Plak de link van de advertentie" autocomplete="off">
+        </div>
+        <button class="btn btn-sun" type="submit">Check deze kamer <span class="price">€59</span></button>
+      </form>
+      <p class="ad-alt" data-hero>Alleen een snelle check? <a href="#book" data-pkg="online">Online Check voor €19</a>, binnen 24 uur.</p>
+      <ul class="trust" data-hero>
+        <li><svg aria-hidden="true"><use href="#i-video"/></svg>Live video binnen 48 uur</li>
+        <li><svg aria-hidden="true"><use href="#i-registry"/></svg>Eigenaar gecheckt in het Kadaster</li>
+        <li><svg aria-hidden="true"><use href="#i-shield"/></svg>Nooit betaald door verhuurders</li>
       </ul>
     </div>
-    <div class="viewfinder-wrap" data-hero>
+    <div class="phone-wrap" data-hero>
       <div class="phone" id="phone">
         <div class="screen">
-          <div class="scene"><canvas id="scene" aria-hidden="true"></canvas></div>
-          <div class="vf-corners" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-          <div class="vf-scan" aria-hidden="true"></div>
-          <div class="vf-label" aria-hidden="true">Kralingen · voordeur</div>
+          <img class="poster" src="../assets/media/hero-poster.jpg" alt="">
+          <video id="hero-video" poster="../assets/media/hero-poster.jpg" muted loop playsinline autoplay preload="auto" aria-label="Voorbeeld van een live kamercheck: aankomen bij de voordeur, de trap op en de kamer filmen"><source src="../assets/media/hero.webm" type="video/webm"><source src="../assets/media/hero.mp4" type="video/mp4"></video>
+          <div class="vf-frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <div class="vf-ui">
-            <div class="vf-top"><span class="rec"><i></i>LIVE</span><span class="rec" id="timecode">00:00:00</span></div>
-            <div class="vf-panel" role="img" aria-label="Voorbeeld van een live kamercheck met checklist en advies in groen, oranje of rood">
-              <h4><span>Kamercheck · live</span><span id="vf-count">0/6</span></h4>
+            <div>
+              <div class="vf-top"><span class="pill"><i></i>LIVE · Kamercheck</span><span class="pill" id="timecode">00:00</span></div>
+              <span class="vf-loc" id="vf-loc">Voordeur · Kralingen</span>
+            </div>
+            <div class="vf-panel" role="img" aria-label="Checklist die tijdens de rondleiding wordt afgevinkt, met advies groen">
+              <h4><span>Checklist</span><span id="vf-count">0/6</span></h4>
               <ul class="vf-list" id="vf-list">
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Eigenaar klopt met het Kadaster</li>
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Nederlandse rekening (IBAN)</li>
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Foto’s niet elders gevonden</li>
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Sleutel en toegang ter plekke</li>
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Kamer klopt met de foto’s</li>
-                <li><span class="tick"><svg><use href="#i-check"/></svg></span>Rookmelder, ramen, slot</li>
+                <li data-t="1.5"><span class="tick"><svg><use href="#i-check"/></svg></span>Adres bestaat</li>
+                <li data-t="4.5"><span class="tick"><svg><use href="#i-check"/></svg></span>Verhuurder heeft sleutel</li>
+                <li data-t="7.6"><span class="tick"><svg><use href="#i-check"/></svg></span>Entree en trappenhuis OK</li>
+                <li data-t="11"><span class="tick"><svg><use href="#i-check"/></svg></span>Kamer klopt met de foto’s</li>
+                <li data-t="14.5"><span class="tick"><svg><use href="#i-check"/></svg></span>Ramen, slot, rookmelder</li>
+                <li data-t="18"><span class="tick"><svg><use href="#i-check"/></svg></span>Grootte klopt</li>
               </ul>
-              <div class="vf-verdict"><span id="vf-verdict-text">Bezig met checken…</span><span class="lights"><i class="g"></i><i class="o"></i><i class="r"></i></span></div>
+              <div class="vf-verdict"><span id="vf-verdict">Bezig met checken…</span><span class="lights"><i class="g"></i><i class="o"></i><i class="r"></i></span></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="float-chip chip-1" aria-hidden="true"><span class="dot"><svg><use href="#i-check"/></svg></span><span>Eigenaar gecheckt<small>Kadaster · officieel register</small></span></div>
-      <div class="float-chip chip-2" aria-hidden="true"><span class="dot"><svg><use href="#i-warn"/></svg></span><span>Borg = 3 maanden<small>Rode vlag in contract</small></span></div>
+      <div class="chip chip-1" aria-hidden="true"><span class="dot"><svg><use href="#i-check"/></svg></span><span>Eigenaar klopt<small>Kadaster-register</small></span></div>
+      <div class="chip chip-2" aria-hidden="true"><span class="dot"><svg><use href="#i-warn"/></svg></span><span>Borg = 3 maanden<small>rode vlag in contract</small></span></div>
+      <div class="chip chip-3" aria-hidden="true"><span class="dot"><svg><use href="#i-clock"/></svg></span><span>Rapport verstuurd<small>36 uur na boeking</small></span></div>
+      <p class="phone-caption">Voorbeeld van een live videotour</p>
     </div>
   </div>
 </section>
 
-<section class="section dark" id="problem">
+<section class="section" id="problem">
   <div class="wrap">
-    <span class="eyebrow">Het probleem</span>
-    <h2 class="h-section" data-split>Kameroplichting neemt toe.</h2>
-    <div class="problem-grid">
-      <article class="stat stat-big">
-        <div class="num"><span data-count="11">11</span>%</div>
-        <p>van de meldingen bij de <strong>Housing Hotline van de LSVb</strong> ging in 2025 over oplichting. Een paar jaar eerder was dat 2%. Rotterdam staat in de top 4 van steden met de meeste meldingen.</p>
-        <span class="src">Bron: LSVb Housing Hotline rapport 2025</span>
+    <span class="eyebrow">Reken even mee</span>
+    <h2 class="h-section" data-split>Oplichting kost <span class="mark">20× meer</span> dan een check.</h2>
+    <div class="loss">
+      <article class="loss-card loss-bad">
+        <span class="lbl">Als de kamer nep is</span>
+        <div class="big">€1.250</div>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-x"/></svg>Borg en eerste huur kwijt (€1.000–1.500)</li>
+          <li><svg aria-hidden="true"><use href="#i-x"/></svg>Geen kamer bij aankomst in september</li>
+          <li><svg aria-hidden="true"><use href="#i-x"/></svg>Oplichters worden bijna nooit gestraft</li>
+        </ul>
+        <span class="src">Bron: Erasmus Magazine; LSVb</span>
       </article>
-      <article class="stat">
-        <div class="num red">€1.000–1.500</div>
-        <p>Dat verliezen slachtoffers in Rotterdam meestal: <strong>borg plus eerste huur</strong>.</p>
-        <span class="src">Bron: Erasmus Magazine</span>
-      </article>
-      <article class="stat">
-        <div class="num"><span data-count="5013" data-format="thousands">5.013</span></div>
-        <p>nieuwe internationale studenten in Rotterdam in 2025-26.</p>
-        <span class="src">Bron: Nuffic, 4 sep 2026</span>
+      <article class="loss-card loss-good">
+        <span class="lbl">Met een Kamercheck</span>
+        <div class="big">€59</div>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Een echt persoon aan de deur, live op video</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Eigenaar gecheckt in het officiële register</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Duidelijk advies voordat u iets betaalt</li>
+        </ul>
+        <a class="btn btn-sun magnetic" href="#book" data-pkg="room">Boek een Kamercheck <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="how">
+<section class="section how" id="how">
   <div class="wrap">
     <div class="how-head">
-      <div>
-        <span class="eyebrow">Zo werkt het</span>
-        <h2 class="h-section" data-split>Van advertentie naar antwoord in 48 uur.</h2>
-      </div>
+      <div><span class="eyebrow">Zo werkt het</span><h2 class="h-section" data-split>Van advertentie naar antwoord in 48 uur.</h2></div>
       <div class="clock" aria-hidden="true"><strong id="hours">0</strong>uur</div>
     </div>
   </div>
   <div class="steps-viewport">
     <div class="wrap">
-      <ol class="steps" id="steps" style="list-style:none;margin:0;padding-left:0">
-        <li class="step"><span class="n"><b>Stap 1</b><span>Uur 0</span></span><h3>Boeken</h3><p>Plak de link van de advertentie, vul het adres en de gegevens van de verhuurder in en betaal online met iDEAL, creditcard of Apple Pay.</p><div class="ill"><svg aria-hidden="true"><use href="#i-link"/></svg></div></li>
-        <li class="step"><span class="n"><b>Stap 2</b><span>Binnen 24 uur</span></span><h3>Online check</h3><p>Advertentie, foto’s, Kadaster, IBAN en scam-radar. Bij een rode vlag hoort u het direct en hoeft u niet verder te betalen.</p><div class="ill"><svg aria-hidden="true"><use href="#i-registry"/></svg></div></li>
-        <li class="step"><span class="n"><b>Stap 3</b><span>Binnen 48 uur</span></span><h3>Bezoek</h3><p>Een student van ons maakt een afspraak met de verhuurder en gaat langs. U kijkt live mee via een videocall, of krijgt een opname.</p><div class="ill"><svg aria-hidden="true"><use href="#i-door"/></svg></div></li>
-        <li class="step"><span class="n"><b>Stap 4</b><span>Dezelfde dag</span></span><h3>Rapport</h3><p>Foto’s en video, de checklist en ons advies: groen, oranje of rood, met de reden erbij.</p><div class="ill"><svg aria-hidden="true"><use href="#i-report"/></svg></div></li>
-        <li class="step"><span class="n"><b>Stap 5</b><span>Uw keuze</span></span><h3>U beslist</h3><p>Wij onderhandelen niet en tekenen niets namens u. We zorgen alleen dat u weet waar u voor betaalt.</p><div class="ill"><svg aria-hidden="true"><use href="#i-decide"/></svg></div></li>
+      <ol class="steps" id="steps">
+        <li class="step"><div class="img icon"><svg aria-hidden="true"><use href="#i-link"/></svg></div><div class="body"><span class="n">Stap 1 · Uur 0</span><h3>Boeken</h3><p>Plak de link, vul het adres en de gegevens van de verhuurder in en betaal online met iDEAL, creditcard of Apple Pay.</p></div></li>
+        <li class="step"><div class="img icon"><svg aria-hidden="true"><use href="#i-registry"/></svg></div><div class="body"><span class="n">Stap 2 · Binnen 24 uur</span><h3>Online check</h3><p>Foto’s, Kadaster, IBAN en scam-radar. Bij een rode vlag hoort u het direct en betaalt u niet voor het bezoek.</p></div></li>
+        <li class="step"><div class="img" style="background-image:url(../assets/media/still-door.jpg)"><span class="tagline">Aan de deur</span></div><div class="body"><span class="n">Stap 3 · Binnen 48 uur</span><h3>Bezoek</h3><p>Een student van ons gaat langs. U kijkt live mee via videocall, of krijgt een opname.</p></div></li>
+        <li class="step"><div class="img" style="background-image:url(../assets/media/still-room.jpg)"><span class="tagline">In het rapport</span></div><div class="body"><span class="n">Stap 4 · Dezelfde dag</span><h3>Rapport</h3><p>Foto’s, video, de checklist en ons advies: groen, oranje of rood, met de reden erbij.</p></div></li>
+        <li class="step"><div class="img icon"><svg aria-hidden="true"><use href="#i-decide"/></svg></div><div class="body"><span class="n">Stap 5 · Uw keuze</span><h3>U beslist</h3><p>Wij onderhandelen niet en tekenen niets namens u.</p></div></li>
       </ol>
       <div class="timeline" aria-hidden="true"><i id="timeline-bar"></i></div>
       <div class="timeline-labels" aria-hidden="true"><span>Geboekt</span><span>24 uur · online</span><span>48 uur · bezoek + rapport</span></div>
@@ -162,52 +175,49 @@
   </div>
 </section>
 
-<section class="section" id="pricing" style="padding-top:0">
+<section class="section" id="pricing">
   <div class="wrap">
     <span class="eyebrow">Prijzen</span>
     <h2 class="h-section" data-split>Simpele prijzen. Geen abonnement.</h2>
     <div class="plans" id="plans-students">
-      <article class="plan"><h3>Online Check</h3><div class="amount">€19</div><span class="time">Binnen 24 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Advertentie- en fotocheck</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Eigenaar in het Kadaster</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>IBAN-land en scam-radar</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Advies: groen, oranje of rood</li></ul><a class="btn btn-ghost" href="#book" data-pkg="online">Boek</a></article>
-      <article class="plan popular"><span class="tag">Meest gekozen</span><h3>Kamercheck</h3><div class="amount">€59</div><span class="time">Binnen 48 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles van de Online Check</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Bezoek met live videotour</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Straat, entree, sleutel en toegang</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Schriftelijk rapport</li></ul><a class="btn btn-primary" href="#book" data-pkg="room">Boek</a></article>
-      <article class="plan"><h3>Kamercheck Plus</h3><div class="amount">€89</div><span class="time">Binnen 48 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles van de Kamercheck</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Rode vlaggen in het contract</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Indicatie huurprijs (puntenstelsel)</li></ul><a class="btn btn-ghost" href="#book" data-pkg="plus">Boek</a></article>
-      <article class="plan"><h3>3-Room Bundle</h3><div class="amount">€149</div><span class="time">Binnen 5 dagen</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>3 Kamerchecks</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Kamers vergelijken</li></ul><a class="btn btn-ghost" href="#book" data-pkg="bundle">Boek</a></article>
+      <article class="plan"><h3>Online Check</h3><div class="amount">€19</div><span class="time"><svg aria-hidden="true"><use href="#i-clock"/></svg>Binnen 24 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Advertentie- en fotocheck</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Eigenaar in het Kadaster</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>IBAN-land en scam-radar</li></ul><a class="btn btn-line" href="#book" data-pkg="online">Kies Online</a></article>
+      <article class="plan popular"><span class="tag">Meest gekozen</span><h3>Kamercheck</h3><div class="amount">€59</div><span class="time"><svg aria-hidden="true"><use href="#i-clock"/></svg>Binnen 48 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles van de Online Check</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Bezoek met live videotour</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Straat, entree, sleutel en toegang</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Rapport voor u en uw kind</li></ul><a class="btn btn-sun" href="#book" data-pkg="room">Boek Kamercheck</a></article>
+      <article class="plan"><h3>Kamercheck Plus</h3><div class="amount">€89</div><span class="time"><svg aria-hidden="true"><use href="#i-clock"/></svg>Binnen 48 uur</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Alles van de Kamercheck</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Rode vlaggen in het contract</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Indicatie huurprijs</li></ul><a class="btn btn-line" href="#book" data-pkg="plus">Kies Plus</a></article>
+      <article class="plan"><h3>3-Room Bundle</h3><div class="amount">€149</div><span class="time"><svg aria-hidden="true"><use href="#i-clock"/></svg>Binnen 5 dagen</span><ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>3 Kamerchecks</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Kamers vergelijken</li></ul><a class="btn btn-line" href="#book" data-pkg="bundle">Kies Bundle</a></article>
     </div>
-    <div class="price-note"><svg aria-hidden="true"><use href="#i-warn"/></svg><p><strong>Laat de verhuurder ons niet binnen?</strong> Dat zegt al veel. U krijgt het verschil met de Online Check terug, plus een duidelijke waarschuwing.</p></div>
-    <p class="free-row">Alle prijzen zijn inclusief btw. Gratis: de scam-radar en de gids met rode vlaggen.</p>
+    <div class="guarantee"><svg aria-hidden="true"><use href="#i-shield"/></svg><p><strong>Laat de verhuurder ons niet binnen?</strong> Dat zegt al veel. U krijgt het verschil met de Online Check terug, plus een duidelijke waarschuwing.</p></div>
+    <div class="pay-row"><span>Veilig betalen met</span><span class="p">iDEAL</span><span class="p">Visa / Mastercard</span><span class="p">Apple Pay</span><span>· Alle prijzen inclusief btw</span></div>
   </div>
 </section>
 
-<section class="section" id="ouders" style="padding-top:0">
+<section class="section tight-top" id="parents">
   <div class="wrap split">
     <article class="panel parents">
-      <span class="eyebrow" style="color:inherit">Voor ouders</span>
-      <p class="big-quote">Uw kind staat op het punt borg over te maken aan een vreemde. Voor €59 gaat een van ons kijken.</p>
+      <span class="eyebrow">Voor ouders</span>
+      <p class="quote">Uw kind maakt zo borg over aan een vreemde. Voor €59 gaat een van ons kijken.</p>
       <p>Veel ouders boeken een check voor hun kind. U krijgt allebei het rapport, met foto’s, video en ons advies.</p>
-      <a class="btn btn-light magnetic" href="#book" data-pkg="room">Boek voor mijn kind <svg class="arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn magnetic" href="#book" data-pkg="room">Boek voor mijn kind <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </article>
     <article class="panel unis">
       <span class="eyebrow">Wie zijn wij</span>
       <h2>Vier studenten. Eén missie.</h2>
-      <p>Wij zijn Sander, Salim, Nick en Levi, studenten uit Rotterdam. Kamerkijker 010 is ons studentenbedrijf. Onze missie: geen enkele nieuwe student in Rotterdam verliest zijn borg aan een oplichter.</p>
+      <p>Wij zijn Sander, Salim, Nick en Levi, studenten uit Rotterdam. Onze missie: geen enkele nieuwe student in Rotterdam verliest zijn borg aan een oplichter.</p>
       <ul><li><strong>Onafhankelijk:</strong> we werken alleen voor de huurder</li><li><strong>Eerlijk:</strong> we zeggen wat we wel en niet kunnen checken</li><li><strong>Lokaal:</strong> we kennen de stad en de trucs</li></ul>
-      <a class="btn btn-primary" href="../#about">Meer over het team</a>
+      <a class="btn btn-cobalt" href="../#about">Meer over het team</a>
     </article>
   </div>
 </section>
 
-<section class="section" id="faq" style="padding-top:0">
+<section class="section tight-top" id="faq">
   <div class="wrap faq-grid">
-    <div>
-      <span class="eyebrow">Vragen</span>
-      <h2 class="h-section" style="font-size:var(--step-3)">Veelgestelde vragen.</h2>
-    </div>
+    <div><span class="eyebrow">Vragen</span><h2 class="h-section" style="font-size:var(--step-3)">Vragen voordat u boekt.</h2></div>
     <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
 
-<section class="section" id="book" style="padding-top:0">
+<section class="section book" id="book">
   <div class="wrap">
-    <span class="eyebrow">Boek een check</span>
+    <span class="eyebrow">Boek een check · in 2 minuten</span>
     <h2 class="h-section" data-split>Stuur ons de advertentie. Wij gaan kijken.</h2>
     <div class="book-shell">
       <aside class="book-aside">
@@ -217,6 +227,11 @@
           <li><span class="bn">3</span>Uw gegevens</li>
           <li><span class="bn">4</span>Controleren en betalen</li>
         </ol>
+        <div class="assure">
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>Rode vlag bij de online check? Dan betaalt u niet voor het bezoek.</div>
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>Geen toegang tot de kamer? Gedeeltelijke terugbetaling.</div>
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>Uw gegevens worden na 6 maanden verwijderd.</div>
+        </div>
         <div class="summary">
           <div><span>Pakket</span><b id="sum-pkg">Kamercheck</b></div>
           <div><span>Resultaat</span><b id="sum-time">binnen 48 uur</b></div>
@@ -229,18 +244,18 @@
           <legend>Welke check heeft u nodig?</legend>
           <div class="pkg-options">
             <div class="pkg"><input type="radio" name="pkg" id="pkg-online" value="online"><label for="pkg-online"><b>Online Check <span>€19</span></b><span>Advertentie, eigenaar, rekening, radar · 24 uur</span></label></div>
-            <div class="pkg"><input type="radio" name="pkg" id="pkg-room" value="room" checked><label for="pkg-room"><b>Kamercheck <span>€59</span></b><span>Plus live videobezoek en rapport · 48 uur</span></label></div>
+            <div class="pkg"><input type="radio" name="pkg" id="pkg-room" value="room" checked><label for="pkg-room"><em>Meest gekozen</em><b>Kamercheck <span>€59</span></b><span>Plus live videobezoek en rapport · 48 uur</span></label></div>
             <div class="pkg"><input type="radio" name="pkg" id="pkg-plus" value="plus"><label for="pkg-plus"><b>Kamercheck Plus <span>€89</span></b><span>Plus contract en huurprijs · 48 uur</span></label></div>
             <div class="pkg"><input type="radio" name="pkg" id="pkg-bundle" value="bundle"><label for="pkg-bundle"><b>3-Room Bundle <span>€149</span></b><span>3 kamers vergelijken · 5 dagen</span></label></div>
           </div>
         </fieldset>
         <fieldset data-step="2" hidden>
           <legend>De kamer en de verhuurder</legend>
-          <div class="field"><label for="ad-url">Link naar de advertentie</label><input class="input" id="ad-url" type="url" placeholder="https://…" required></div>
+          <div class="field"><label for="ad-url">Link naar de advertentie</label><input class="input" id="ad-url" type="url" inputmode="url" placeholder="https://…" required></div>
           <div class="field"><label for="address">Adres van de kamer</label><input class="input" id="address" type="text" placeholder="Straat, nummer, postcode, Rotterdam" required></div>
           <div class="row-2">
-            <div class="field"><label for="ll-name">Naam verhuurder</label><input class="input" id="ll-name" type="text"></div>
-            <div class="field"><label for="ll-phone">Telefoon verhuurder</label><input class="input" id="ll-phone" type="tel"></div>
+            <div class="field"><label for="ll-name">Naam verhuurder (optioneel)</label><input class="input" id="ll-name" type="text"></div>
+            <div class="field"><label for="ll-phone">Telefoon verhuurder (optioneel)</label><input class="input" id="ll-phone" type="tel"></div>
           </div>
           <p class="err" id="err-2" role="alert"></p>
         </fieldset>
@@ -248,41 +263,41 @@
           <legend>Uw gegevens</legend>
           <div class="row-2">
             <div class="field"><label for="c-name">Naam</label><input class="input" id="c-name" type="text" autocomplete="name" required></div>
-            <div class="field"><label for="c-email">E-mail</label><input class="input" id="c-email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="c-email">E-mail (hier sturen we het rapport heen)</label><input class="input" id="c-email" type="email" autocomplete="email" required></div>
           </div>
-          <div class="field"><label for="c-phone">WhatsApp-nummer (optioneel)</label><input class="input" id="c-phone" type="tel" autocomplete="tel"></div>
-          <div class="field"><label for="p-email">E-mail van uw kind of ouder (optioneel, krijgt ook het rapport)</label><input class="input" id="p-email" type="email"></div>
+          <div class="field"><label for="c-phone">WhatsApp-nummer (optioneel, voor de live tour)</label><input class="input" id="c-phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="p-email">E-mail van uw kind of ouder (optioneel)</label><input class="input" id="p-email" type="email"></div>
           <p class="err" id="err-3" role="alert"></p>
         </fieldset>
         <fieldset data-step="4" hidden>
           <legend>Controleren en betalen</legend>
           <dl class="review" id="review"></dl>
-          <label class="check-row" for="agree"><input type="checkbox" id="agree"> <span>Ik wil dat jullie direct starten. Ik begrijp dat dit een visuele en administratieve check is, geen garantie, en dat ik zelf beslis.</span></label>
+          <label class="check-row" for="agree"><input type="checkbox" id="agree"> <span>Start direct. Ik begrijp dat dit een visuele en administratieve check is, geen garantie, en dat ik zelf beslis.</span></label>
           <p class="err" id="err-4" role="alert"></p>
         </fieldset>
         <div class="success" id="book-success" hidden>
           <div class="seal"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
           <h3>Boeking ontvangen.</h3>
           <p>In de live versie betaalt u nu met iDEAL, creditcard of Apple Pay en krijgt u een bevestigingsmail. Binnen 24 uur starten we de online check.</p>
-          <button class="btn btn-ghost" type="button" id="book-again">Nog een check boeken</button>
+          <button class="btn btn-line" type="button" id="book-again">Nog een check boeken</button>
         </div>
         <div class="form-nav" id="form-nav">
-          <button class="btn btn-ghost" type="button" id="prev" hidden>Terug</button>
-          <button class="btn btn-primary" type="submit" id="next" style="margin-left:auto">Verder <svg class="arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn-line" type="button" id="prev" hidden>Terug</button>
+          <button class="btn btn-sun" type="submit" id="next" style="margin-left:auto">Verder <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<section class="section dark cta-final" id="contact">
+<section class="section dark final" id="contact">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
-    <h2 data-split>Stuur geen borg naar een vreemde. Stuur ons eerst.</h2>
+    <h2 data-split>Stuur geen borg naar een vreemde. <span class="hl">Stuur ons eerst.</span></h2>
     <div class="contact-row">
-      <a class="contact-card" href="https://wa.me/31600000000" target="_blank" rel="noopener"><small>WhatsApp Business</small><strong>Chat met Salim</strong><span class="src">Snelste antwoord</span></a>
-      <div class="contact-card"><small>E-mail</small><strong id="mail-addr">hello@kamerkijker010.nl</strong><button class="chip" type="button" id="copy-mail" style="justify-self:start;margin-top:6px">Kopieer adres</button></div>
-      <a class="contact-card" href="../"><small>English</small><strong>Full English website</strong><span class="src">Checklist, scam radar, red flags</span></a>
+      <a class="contact-card" href="https://wa.me/31600000000" target="_blank" rel="noopener"><small>WhatsApp Business</small><strong>Chat met Salim</strong><span class="src" style="color:var(--night-soft)">Snelste antwoord</span></a>
+      <div class="contact-card"><small>E-mail</small><strong id="mail-addr">hello@kamerkijker010.nl</strong><button class="chipf" type="button" id="copy-mail">Kopieer adres</button></div>
+      <a class="contact-card" href="../"><small>English</small><strong>Full English website</strong><span class="src" style="color:var(--night-soft)">Checklist, scam radar, red flags</span></a>
     </div>
   </div>
 </section>
@@ -292,7 +307,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div><a class="brand" href="#top"><span>Kamerkijker <b>010</b></span></a><p style="margin-top:14px;max-width:38ch">Een studentenbedrijf uit Rotterdam. Wij checken kamers voor mensen die hier nog niet kunnen zijn.</p></div>
-      <div><h4>Service</h4><ul><li><a href="#how">Zo werkt het</a></li><li><a href="#pricing">Prijzen</a></li><li><a href="../#radar">Scam-radar</a></li><li><a href="../#guide">Rode vlaggen</a></li></ul></div>
+      <div><h4>Service</h4><ul><li><a href="#how">Zo werkt het</a></li><li><a href="#pricing">Prijzen</a></li><li><a href="../#radar">Scam-radar</a></li><li><a href="../#red-flags">Rode vlaggen</a></li></ul></div>
       <div><h4>Bedrijf</h4><ul><li><a href="../legal.html#privacy">Privacy</a></li><li><a href="../legal.html#terms">Voorwaarden</a></li><li><a href="../legal.html#disclaimer">Disclaimer</a></li><li><a href="../" hreflang="en" lang="en">English</a></li></ul></div>
     </div>
     <p class="disclaimer">Kamerkijker 010 voert een visuele en administratieve check uit volgens een vaste checklist, op de datum van het bezoek. We garanderen niet dat een verhuurder, kamer of contract betrouwbaar is, en we geven geen juridisch advies. We werken alleen voor de huurder en ontvangen geen geld van verhuurders. De klant neemt zelf de uiteindelijke beslissing.</p>
@@ -300,6 +315,10 @@
   </div>
 </footer>
 
+<div class="sticky-cta" id="sticky-cta">
+  <a class="btn btn-sun" href="#book" data-pkg="room">Boek een Kamercheck · €59</a>
+  <a class="wa" href="https://wa.me/31600000000" target="_blank" rel="noopener" aria-label="Chat via WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+</div>
 <a class="wa-float" href="https://wa.me/31600000000" target="_blank" rel="noopener" aria-label="Chat met ons via WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

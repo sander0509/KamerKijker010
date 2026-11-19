@@ -1,6 +1,6 @@
 # Kamerkijker 010 — website
 
-Static, dependency-free website for Kamerkijker 010 (“See it before you pay”), built from the website briefing of 19 Nov 2026.
+Static website for Kamerkijker 010 (“See it before you pay”), built from the website briefing of 19 Nov 2026.
 
 ## Structure
 
@@ -11,6 +11,16 @@ Static, dependency-free website for Kamerkijker 010 (“See it before you pay”
 | `legal.html` | Disclaimer, terms in short, privacy, team safety |
 | `assets/css/style.css` | Design tokens (light + dark), layout, components |
 | `assets/js/main.js` | All interactions and animations |
+| `assets/media/` | Hero video (`hero.webm` + `hero.mp4`, 21 s, vertical) and stills used in the steps and the sample report |
+
+## Footage
+
+The hero video and stills are cut from free stock clips on [Mixkit](https://mixkit.co) (Mixkit free licence, commercial use allowed, no attribution required): clips 21813 (front door), 22223 (stairs), 4029 and 3111 (rooms). The site labels it “Example of a live video tour”. Replace it with your own footage from a real check once you have one: export a vertical 540×960 clip to `assets/media/hero.mp4` (and `hero.webm`) and keep the timings in the `data-t` attributes of the checklist in `index.html` in sync.
+
+## Conversion features
+
+- “Paste the link to the room ad” field in the hero that jumps straight to step 2 of the booking form with the link filled in.
+- Loss comparison (€1,250 lost vs €59 check), sample report with real photos, refund guarantee, payment methods, sticky “Book a Room Check” bar on mobile.
 
 ## Tech
 

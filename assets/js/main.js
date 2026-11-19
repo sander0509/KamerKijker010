@@ -119,128 +119,61 @@
     loop();
   }
 
-  /* ---------- Viewfinder scene (canvas: Rotterdam front door, then the room) ---------- */
-  const canvas = $("#scene");
-  let sceneMode = 0; // 0 = street, 1 = room
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
-    let W = 0, H = 0, dpr = 1;
-    const resize = () => {
-      dpr = Math.min(devicePixelRatio || 1, 2);
-      W = canvas.clientWidth; H = canvas.clientHeight;
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      const scan = canvas.closest(".screen").querySelector(".vf-scan");
-      if (scan) scan.style.setProperty("--scan-h", `${Math.max(120, H - 210)}px`);
-    };
-    resize(); addEventListener("resize", resize);
-    const t0 = performance.now();
-    const street = (t) => {
-      const g = ctx.createLinearGradient(0, 0, 0, H);
-      g.addColorStop(0, "#8fb4c4"); g.addColorStop(.5, "#c9d7d6"); g.addColorStop(1, "#5d6b6a");
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-      const z = 1 + ((t / 9000) % 1) * 0.18; // slow dolly toward the door
-      ctx.save(); ctx.translate(W / 2, H * 0.55); ctx.scale(z, z); ctx.translate(-W / 2, -H * 0.55);
-      // brick facade
-      ctx.fillStyle = "#8a4b36"; ctx.fillRect(-W * .2, H * .02, W * 1.4, H * .85);
-      ctx.strokeStyle = "rgba(60,25,15,.35)"; ctx.lineWidth = 1;
-      for (let y = H * .02; y < H * .87; y += 9) {
-        ctx.beginPath(); ctx.moveTo(-W * .2, y); ctx.lineTo(W * 1.2, y); ctx.stroke();
-        const off = (Math.round(y / 9) % 2) * 11;
-        for (let x = -W * .2 + off; x < W * 1.2; x += 22) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + 9); ctx.stroke(); }
+  /* ---------- Hero phone: real footage with a checklist synced to the video ---------- */
+  const video = $("#hero-video");
+  if (video) {
+    const items = $$("#vf-list li"), count = $("#vf-count"), verdict = $("#vf-verdict"), loc = $("#vf-loc"), tc = $("#timecode");
+    const lights = $$(".lights i");
+    const setLight = (k) => lights.forEach((l) => l.classList.toggle("on", !!k && l.classList.contains(k)));
+    const places = [[0, T("Front door · Kralingen", "Voordeur · Kralingen")], [6.2, T("Stairwell", "Trappenhuis")], [9.2, T("The room · 2nd floor", "De kamer · 2e verdieping")]];
+    let last = -1;
+    const sync = () => {
+      const t = video.currentTime || 0;
+      let n = 0;
+      items.forEach((li) => { const d = t >= +li.dataset.t; li.classList.toggle("done", d); if (d) n++; });
+      if (n !== last) {
+        last = n;
+        count.textContent = `${n}/${items.length}`;
+        if (n === items.length) { verdict.textContent = T("Advice: green", "Advies: groen"); setLight("g"); }
+        else { verdict.textContent = T("Checking…", "Bezig met checken…"); setLight(n >= 3 ? "o" : ""); }
       }
-      // windows
-      const win = (x, y, w, h, lit) => {
-        ctx.fillStyle = "#efe9dc"; ctx.fillRect(x - 4, y - 4, w + 8, h + 8);
-        ctx.fillStyle = lit ? "#f3d58c" : "#2c3f46"; ctx.fillRect(x, y, w, h);
-        ctx.strokeStyle = "#efe9dc"; ctx.lineWidth = 3;
-        ctx.beginPath(); ctx.moveTo(x + w / 2, y); ctx.lineTo(x + w / 2, y + h); ctx.moveTo(x, y + h * .4); ctx.lineTo(x + w, y + h * .4); ctx.stroke();
-      };
-      win(W * .1, H * .1, W * .26, H * .17, false); win(W * .64, H * .1, W * .26, H * .17, true);
-      win(W * .64, H * .4, W * .26, H * .17, false);
-      // door
-      const dx = W * .14, dy = H * .38, dw = W * .32, dh = H * .49;
-      ctx.fillStyle = "#efe9dc"; ctx.fillRect(dx - 6, dy - 6, dw + 12, dh + 6);
-      ctx.fillStyle = "#123c3a"; ctx.fillRect(dx, dy, dw, dh);
-      ctx.fillStyle = "#0d2e2c"; ctx.fillRect(dx + dw * .12, dy + dh * .08, dw * .76, dh * .32); ctx.fillRect(dx + dw * .12, dy + dh * .5, dw * .76, dh * .42);
-      ctx.fillStyle = "#d9b45a"; ctx.beginPath(); ctx.arc(dx + dw * .82, dy + dh * .46, 3.5, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "#efe9dc"; ctx.font = `600 ${Math.round(W * .06)}px ui-monospace, monospace`; ctx.fillText("42", dx + dw * .38, dy - 12);
-      // pavement
-      ctx.fillStyle = "#6d7776"; ctx.fillRect(-W * .2, H * .87, W * 1.4, H * .2);
-      ctx.restore();
+      const pl = places.filter((x) => t >= x[0]).pop();
+      if (pl && loc.textContent !== pl[1]) loc.textContent = pl[1];
+      const total = Math.floor(t + 134);
+      tc.textContent = `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(total % 60).padStart(2, "0")}`;
     };
-    const room = (t) => {
-      ctx.fillStyle = "#e8e1d4"; ctx.fillRect(0, 0, W, H);
-      const pan = Math.sin(t / 2600) * W * .05;
-      ctx.save(); ctx.translate(pan, 0);
-      ctx.fillStyle = "#d8cfbf"; ctx.fillRect(-W * .2, H * .68, W * 1.4, H * .4); // floor
-      ctx.fillStyle = "#b99f7c"; for (let x = -W * .2; x < W * 1.2; x += 26) ctx.fillRect(x, H * .68, 1.5, H * .4);
-      // window with daylight
-      ctx.fillStyle = "#f7f4ec"; ctx.fillRect(W * .52, H * .12, W * .38, H * .32);
-      const sky = ctx.createLinearGradient(0, H * .14, 0, H * .42); sky.addColorStop(0, "#9cc6dd"); sky.addColorStop(1, "#dbe9ee");
-      ctx.fillStyle = sky; ctx.fillRect(W * .55, H * .14, W * .32, H * .28);
-      ctx.fillStyle = "#6f8790"; ctx.fillRect(W * .58, H * .32, W * .06, H * .1); ctx.fillRect(W * .66, H * .26, W * .05, H * .16); ctx.fillRect(W * .74, H * .3, W * .1, H * .12); // skyline
-      ctx.strokeStyle = "#f7f4ec"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(W * .71, H * .14); ctx.lineTo(W * .71, H * .42); ctx.stroke();
-      // bed
-      ctx.fillStyle = "#0f6b5c"; ctx.fillRect(W * .02, H * .52, W * .48, H * .2);
-      ctx.fillStyle = "#f4f1ea"; ctx.fillRect(W * .04, H * .48, W * .14, H * .07);
-      ctx.fillStyle = "#7a5a3c"; ctx.fillRect(W * .02, H * .72, W * .48, H * .025);
-      // desk + lamp
-      ctx.fillStyle = "#7a5a3c"; ctx.fillRect(W * .58, H * .56, W * .36, H * .025); ctx.fillRect(W * .6, H * .58, W * .02, H * .12); ctx.fillRect(W * .9, H * .58, W * .02, H * .12);
-      ctx.fillStyle = "#c27712"; ctx.beginPath(); ctx.moveTo(W * .82, H * .5); ctx.lineTo(W * .9, H * .5); ctx.lineTo(W * .87, H * .45); ctx.lineTo(W * .85, H * .45); ctx.fill();
-      // smoke detector on ceiling
-      ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.ellipse(W * .3, H * .03, W * .05, H * .012, 0, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = (Math.floor(t / 600) % 2) ? "#e5544a" : "#7a2a24"; ctx.beginPath(); ctx.arc(W * .3, H * .03, 2, 0, Math.PI * 2); ctx.fill();
-      ctx.restore();
-    };
-    const draw = (now) => {
-      const t = now - t0;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      // handheld camera wobble
-      const sx = reduce ? 0 : Math.sin(t / 900) * 2 + Math.sin(t / 370) * .8;
-      const sy = reduce ? 0 : Math.cos(t / 1100) * 2;
-      ctx.translate(sx, sy);
-      (sceneMode ? room : street)(t);
-      // vignette
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const v = ctx.createRadialGradient(W / 2, H / 2, H * .25, W / 2, H / 2, H * .75);
-      v.addColorStop(0, "rgba(0,0,0,0)"); v.addColorStop(1, "rgba(0,0,0,.45)");
-      ctx.fillStyle = v; ctx.fillRect(0, 0, W, H);
-      if (!reduce) requestAnimationFrame(draw);
-    };
-    requestAnimationFrame(draw);
-    if (reduce) setInterval(() => requestAnimationFrame(draw), 1500);
+    video.addEventListener("timeupdate", sync);
+    const tryPlay = () => { const pr = video.play(); if (pr && pr.catch) pr.catch(() => {}); };
+    if (reduce) {
+      video.removeAttribute("autoplay"); video.pause();
+      items.forEach((li) => li.classList.add("done"));
+      count.textContent = `${items.length}/${items.length}`; verdict.textContent = T("Advice: green", "Advies: groen"); setLight("g");
+    } else {
+      tryPlay();
+      if ("IntersectionObserver" in window) new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? tryPlay() : video.pause()))).observe(video);
+    }
+    video.addEventListener("playing", () => { const poster = video.parentElement.querySelector(".poster"); if (poster) poster.hidden = true; });
   }
 
-  /* ---------- Viewfinder checklist loop ---------- */
-  const vfItems = $$("#vf-list li"), vfCount = $("#vf-count"), vfText = $("#vf-verdict-text"), lights = $$(".lights i"), timecode = $("#timecode"), vfLabel = $(".vf-label");
-  if (vfItems.length) {
-    let i = 0, secs = 0;
-    setInterval(() => {
-      secs++;
-      const h = String(Math.floor(secs / 3600)).padStart(2, "0"), m = String(Math.floor(secs / 60) % 60).padStart(2, "0"), s = String(secs % 60).padStart(2, "0");
-      if (timecode) timecode.textContent = `${h}:${m}:${s}`;
-    }, 1000);
-    const setLight = (k) => lights.forEach((l) => l.classList.toggle("on", l.classList.contains(k)));
-    const step = () => {
-      if (i < vfItems.length) {
-        vfItems[i].classList.add("done"); i++;
-        vfCount.textContent = `${i}/${vfItems.length}`;
-        if (i === 3) { sceneMode = 1; if (vfLabel) vfLabel.textContent = T("2nd floor · the room", "2e verdieping · de kamer"); }
-        vfText.textContent = T("Checking…", "Bezig met checken…");
-        setLight(i < 3 ? "" : "o");
-        setTimeout(step, reduce ? 300 : 1100);
-      } else {
-        vfText.textContent = T("Advice: green", "Advies: groen");
-        setLight("g");
-        setTimeout(() => {
-          vfItems.forEach((li) => li.classList.remove("done")); i = 0; sceneMode = 0;
-          if (vfLabel) vfLabel.textContent = T("Kralingen · front door", "Kralingen · voordeur");
-          vfCount.textContent = `0/${vfItems.length}`; setLight("");
-          setTimeout(step, 700);
-        }, 3200);
-      }
-    };
-    setTimeout(step, 1400);
+  /* ---------- Hero "paste your ad" form + sticky CTA ---------- */
+  const heroForm = $("#ad-form");
+  if (heroForm) heroForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let v = $("#hero-ad").value.trim();
+    if (v && !/^https?:\/\//i.test(v)) v = "https://" + v;
+    selectPackage("room");
+    const ad = $("#ad-url"); if (ad && v) ad.value = v;
+    if (showStep) showStep(v ? 2 : 1);
+    const target = $("#book");
+    if (lenis) lenis.scrollTo(target, { offset: -80, duration: 1.4 }); else target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    setTimeout(() => { const f = v ? $("#address") : $("#pkg-room"); if (f) f.focus({ preventScroll: true }); }, reduce ? 0 : 1300);
+  });
+  const sticky = $("#sticky-cta");
+  if (sticky && "IntersectionObserver" in window) {
+    const vis = {};
+    const upd = () => sticky.classList.toggle("show", !vis.hero && !vis.book && !vis.contact);
+    const io = new IntersectionObserver((es) => { es.forEach((e) => (vis[e.target.id] = e.isIntersecting)); upd(); });
+    ["#hero", "#book", "#contact"].forEach((sel) => { const el = $(sel); if (el) { vis[el.id] = sel === "#hero"; io.observe(el); } });
   }
 
   /* ---------- Data ---------- */
@@ -466,7 +399,7 @@
 
   /* ---------- Booking ---------- */
   const form = $("#book-form");
-  let stepN = 1;
+  let stepN = 1, showStep = null;
   function selectPackage(k) {
     const r = document.getElementById(`pkg-${k}`);
     if (r) { r.checked = true; updateSummary(); }
@@ -524,6 +457,7 @@
       if (hasGSAP && !reduce) gsap.from(ok.children, { y: 20, opacity: 0, stagger: .08, duration: .6, ease: "back.out(1.6)" });
     });
     prev.addEventListener("click", () => show(stepN - 1));
+    showStep = show;
     $("#book-again").addEventListener("click", () => { form.reset(); $("#book-success").hidden = true; $("#form-nav").hidden = false; updateSummary(); show(1); });
     updateSummary();
   }
@@ -548,18 +482,22 @@
   // Hero intro: one orchestrated moment
   const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
   intro.from(".hero h1 .line > span", { yPercent: 110, duration: 1.2, stagger: .1 })
-    .from(".hero h1 em path", { strokeDashoffset: 600, duration: 1.2, ease: "power2.inOut" }, "-=.6")
     .from("[data-hero]", { y: 24, opacity: 0, duration: 1, stagger: .08 }, .25)
     .from(".phone", { rotateY: -24, rotateX: 10, y: 60, duration: 1.6 }, .3)
-    .from(".float-chip", { scale: .6, opacity: 0, duration: .9, stagger: .2, ease: "back.out(1.8)" }, 1.1);
+    .from(".chip", { scale: .6, opacity: 0, duration: .9, stagger: .2, ease: "back.out(1.8)" }, 1.1);
   gsap.to(".chip-1", { y: -10, duration: 2.4, repeat: -1, yoyo: true, ease: "sine.inOut" });
   gsap.to(".chip-2", { y: 10, duration: 2.8, repeat: -1, yoyo: true, ease: "sine.inOut" });
+  gsap.to(".chip-3", { y: -8, duration: 3.1, repeat: -1, yoyo: true, ease: "sine.inOut" });
 
   // Split headings into words that rise in
   $$("[data-split]").forEach((h) => {
-    const words = h.textContent.trim().split(/\s+/);
-    h.setAttribute("aria-label", h.textContent.trim());
-    h.innerHTML = words.map((w) => `<span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em"><span style="display:inline-block" aria-hidden="true">${w}</span></span>`).join(" ");
+    h.setAttribute("aria-label", h.textContent.trim().replace(/\s+/g, " "));
+    const wrap = (w, cls) => `<span style="display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em"><span style="display:inline-block"${cls ? ` class="${cls}"` : ""} aria-hidden="true">${w}</span></span>`;
+    const out = [];
+    h.childNodes.forEach((n) => {
+      (n.textContent || "").trim().split(/\s+/).filter(Boolean).forEach((w) => out.push(wrap(w, n.nodeType === 1 ? n.className : "")));
+    });
+    h.innerHTML = out.join(" ");
     gsap.from(h.querySelectorAll("span > span"), { yPercent: 105, duration: 1, stagger: .045, ease: "expo.out", scrollTrigger: { trigger: h, start: "top 85%", once: true } });
   });
 
@@ -567,7 +505,8 @@
   const reveal = (sel, opts = {}) => $$(sel).forEach((group) => {
     gsap.from(group.children, Object.assign({ y: 40, opacity: 0, duration: .9, stagger: .08, ease: "power3.out", scrollTrigger: { trigger: group, start: "top 85%", once: true } }, opts));
   });
-  reveal(".problem-grid"); reveal(".why"); reveal("#plans-students"); reveal(".team"); reveal(".flag-cards", { y: 30, stagger: .05 }); reveal(".split"); reveal(".contact-row"); reveal(".values");
+  reveal(".loss"); reveal(".stats"); reveal("#plans-students"); reveal(".team"); reveal(".split"); reveal(".contact-row"); reveal(".values"); reveal(".report-points");
+  gsap.from(".report", { y: 60, rotate: 4, opacity: 0, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: ".report", start: "top 85%", once: true } });
   gsap.from(".table-scroll", { y: 40, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".table-scroll", start: "top 88%", once: true } });
 
   // Counters
@@ -578,9 +517,7 @@
       onUpdate: () => { el.textContent = fmt ? Math.round(o.v).toLocaleString("en-US") : Math.round(o.v); } });
   });
   // Bars grow to scale
-  $$("#bars rect").forEach((r, i) => {
-    gsap.from(r, { attr: { width: 0 }, duration: 1.4, delay: i * .15, ease: "expo.out", scrollTrigger: { trigger: "#bars", start: "top 85%", once: true } });
-  });
+  gsap.from(".bar i b", { width: 0, duration: 1.4, stagger: .15, ease: "expo.out", scrollTrigger: { trigger: ".bars", start: "top 88%", once: true } });
 
   // How it works: pinned horizontal travel on wide screens
   const mm = gsap.matchMedia();
@@ -593,7 +530,7 @@
     const dist = () => Math.max(0, stepsEl.scrollWidth - stepsEl.parentElement.clientWidth + 40);
     const tw = gsap.to(stepsEl, {
       x: () => -dist(), ease: "none",
-      scrollTrigger: { trigger: "#how", start: "top 72px", end: () => `+=${dist() + innerHeight * .3}`, pin: true, scrub: .8, invalidateOnRefresh: true, anticipatePin: 1,
+      scrollTrigger: { trigger: "#how", start: "top 74px", end: () => `+=${dist() + innerHeight * .3}`, pin: true, scrub: .8, invalidateOnRefresh: true, anticipatePin: 1,
         onUpdate: (s) => setHours(s.progress) }
     });
     return () => tw.scrollTrigger && tw.scrollTrigger.kill();
