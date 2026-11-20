@@ -1,0 +1,123 @@
+<div class="journey" data-journey data-mode="{{mode}}">
+  <div class="phone" data-tilt>
+    <div class="screen app">
+      <div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-ic"><i></i><i></i><i></i><b></b></span></div>
+      <div class="app-bar">
+        <span class="app-logo" aria-hidden="true"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#ffd43b"/><path d="M6 20c3.6-6 8.4-9 14-9s10.4 3 14 9c-3.6 6-8.4 9-14 9s-10.4-3-14-9z" fill="none" stroke="#0b1033" stroke-width="3" stroke-linejoin="round"/><circle cx="20" cy="18.4" r="3.4" fill="#0b1033"/><path d="M18.6 20.5h2.8l.8 5h-4.4z" fill="#0b1033"/></svg></span>
+        <span class="app-title" data-title>[[book_title]]</span>
+        <span class="app-step" data-stepno>1/5</span>
+      </div>
+
+      <div class="scenes">
+        <!-- 1. Book -->
+        <section class="scene is-active" data-scene="book" data-title="[[book_title]]" aria-label="[[book_aria]]">
+          <p class="s-kicker">[[book_kicker]]</p>
+          <h4 class="s-title">[[book_h]]</h4>
+          <span class="s-label">[[book_label]]</span>
+          <div class="s-input"><svg aria-hidden="true"><use href="#i-link"/></svg><span data-type="[[book_link]]"></span><i class="caret"></i></div>
+          <div class="s-pkgs">
+            <div class="s-pkg"><span>Online Check</span><b>€19</b><small>24 h</small></div>
+            <div class="s-pkg" data-pkg-main><em>[[popular]]</em><span>[[room_check]]</span><b>€59</b><small>48 h</small></div>
+          </div>
+          <div class="s-pay" data-pay><span class="lbl">[[pay]]</span><span class="spin" aria-hidden="true"></span></div>
+          <div class="s-toast" data-paid><svg aria-hidden="true"><use href="#i-check"/></svg><span>[[paid]]</span></div>
+        </section>
+
+        <!-- 2. Online check -->
+        <section class="scene" data-scene="online" data-title="[[online_title]]" aria-label="[[online_aria]]">
+          <p class="s-kicker">[[online_kicker]]</p>
+          <h4 class="s-title">[[online_h]]</h4>
+          <ul class="s-rows">
+            <li data-row><span class="s-ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><b>[[row1]]</b><small>[[row1s]]</small></span></li>
+            <li data-row><span class="s-ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><b>[[row2]]</b><small>[[row2s]]</small></span></li>
+            <li data-row><span class="s-ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><b>[[row3]]</b><small>[[row3s]]</small></span></li>
+            <li data-row><span class="s-ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><b>[[row4]]</b><small>[[row4s]]</small></span></li>
+          </ul>
+          <div class="s-banner" data-banner><svg aria-hidden="true"><use href="#i-shield"/></svg><span><b>[[banner]]</b><small>[[banner_s]]</small></span></div>
+        </section>
+
+        <!-- 3. Visit -->
+        <section class="scene" data-scene="visit" data-title="[[visit_title]]" aria-label="[[visit_aria]]">
+          <p class="s-kicker">[[visit_kicker]]</p>
+          <h4 class="s-title">[[visit_h]]</h4>
+          <div class="s-map" aria-hidden="true">
+            <svg viewBox="0 0 300 170" preserveAspectRatio="xMidYMid slice">
+              <rect width="300" height="170" fill="#e9edff"/>
+              <path d="M0 120 C 60 100, 110 135, 170 118 S 260 96, 300 110 L300 170 L0 170 Z" fill="#c9d4ff"/>
+              <g stroke="#ffffff" stroke-width="6" fill="none"><path d="M0 40 H300"/><path d="M0 85 H300"/><path d="M60 0 V120"/><path d="M150 0 V125"/><path d="M235 0 V110"/></g>
+              <path class="route" d="M40 150 C 70 120, 70 85, 150 85 S 230 60, 235 40" fill="none" stroke="#2338f5" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 7"/>
+              <circle cx="40" cy="150" r="6" fill="#0b1033"/>
+              <g class="pin"><circle cx="235" cy="40" r="11" fill="#ffd43b" stroke="#0b1033" stroke-width="2.5"/><circle cx="235" cy="40" r="3.5" fill="#0b1033"/></g>
+              <text x="250" y="160" font-family="ui-monospace,monospace" font-size="11" fill="#4a5285">MAAS</text>
+            </svg>
+          </div>
+          <ol class="s-timeline">
+            <li data-v><time>14:00</time><span>[[v1]]</span></li>
+            <li data-v><time>14:06</time><span>[[v2]]</span></li>
+            <li data-v><time>14:31</time><span>[[v3]]</span></li>
+          </ol>
+        </section>
+
+        <!-- 4 + 5. Report -->
+        <section class="scene scene-report" data-scene="report" data-title="[[report_title]]" aria-label="[[report_aria]]">
+          <div class="r-scroll" data-rscroll>
+            <div class="r-head">
+              <div><b>[[report_h]]</b><small>[[report_meta]]</small></div>
+              <span class="r-pill">[[advice_green]]</span>
+            </div>
+            <div class="r-video">
+              <video muted playsinline preload="metadata" poster="{{root}}assets/media/hero-poster.jpg" aria-label="[[video_aria]]"><source src="{{root}}assets/media/hero.webm" type="video/webm"><source src="{{root}}assets/media/hero.mp4" type="video/mp4"></video>
+              <span class="r-vlabel"><svg aria-hidden="true"><use href="#i-play"/></svg>[[video_label]]</span>
+              <div class="r-vbar"><i data-vprog></i></div>
+              <div class="vf-panel">
+                <h4><span>[[checklist]]</span><span data-check-count>0/6</span></h4>
+                <ul class="vf-list" data-check>
+                  <li data-t="1.5"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c1]]</li>
+                  <li data-t="4.5"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c2]]</li>
+                  <li data-t="7.6"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c3]]</li>
+                  <li data-t="11"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c4]]</li>
+                  <li data-t="14.5"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c5]]</li>
+                  <li data-t="18"><span class="tick"><svg><use href="#i-check"/></svg></span>[[c6]]</li>
+                </ul>
+              </div>
+            </div>
+            <h5 class="r-h">[[photos]]</h5>
+            <div class="r-photos">
+              <img src="{{root}}assets/media/still-room.jpg" alt="" loading="lazy">
+              <img src="{{root}}assets/media/still-door.jpg" alt="" loading="lazy">
+              <img src="{{root}}assets/media/still-stairs.jpg" alt="" loading="lazy">
+            </div>
+            <h5 class="r-h">[[owner_money]]</h5>
+            <div class="r-rows">
+              <div><span class="st ok"><svg aria-hidden="true"><use href="#i-check"/></svg></span>[[r1]]</div>
+              <div><span class="st ok"><svg aria-hidden="true"><use href="#i-check"/></svg></span>[[r2]]</div>
+              <div><span class="st ok"><svg aria-hidden="true"><use href="#i-check"/></svg></span>[[r3]]</div>
+              <div><span class="st warn"><svg aria-hidden="true"><use href="#i-warn"/></svg></span>[[r4]]</div>
+            </div>
+            <div class="r-advice" data-advice>
+              <div class="r-lights" data-light><i class="g"></i><i class="o"></i><i class="r"></i></div>
+              <b>[[advice_green]]</b>
+              <p data-light-text>[[advice_text]]</p>
+              <div class="r-btns"><span>[[pdf]]</span><span>[[ask]]</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="push" data-push aria-hidden="true">
+        <span class="push-ic"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#ffd43b"/><path d="M6 20c3.6-6 8.4-9 14-9s10.4 3 14 9c-3.6 6-8.4 9-14 9s-10.4-3-14-9z" fill="none" stroke="#0b1033" stroke-width="3"/><circle cx="20" cy="18.4" r="3.4" fill="#0b1033"/></svg></span>
+        <span class="push-txt"><b>Kamerkijker 010</b><small>[[push]]</small></span>
+        <time>[[now]]</time>
+      </div>
+      <span class="tap" data-tap aria-hidden="true"></span>
+      <span class="home-ind" aria-hidden="true"></span>
+    </div>
+  </div>
+  <ol class="journey-steps" role="tablist" aria-label="[[journey_aria]]">
+    <li><button type="button" role="tab" data-go="0"><i></i><span>[[st1]]</span></button></li>
+    <li><button type="button" role="tab" data-go="1"><i></i><span>[[st2]]</span></button></li>
+    <li><button type="button" role="tab" data-go="2"><i></i><span>[[st3]]</span></button></li>
+    <li><button type="button" role="tab" data-go="3"><i></i><span>[[st4]]</span></button></li>
+    <li><button type="button" role="tab" data-go="4"><i></i><span>[[st5]]</span></button></li>
+  </ol>
+</div>

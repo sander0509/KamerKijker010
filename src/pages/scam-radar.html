@@ -1,0 +1,55 @@
+<section class="page-hero dark">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{root}}./">Home</a><span>/</span><span>Scam radar</span></nav>
+    <span class="eyebrow">Scam radar 010 · free</span>
+    <h1 data-split>Is this address on our <span class="hl">scam radar?</span></h1>
+    <p class="lede">Reported patterns of fake room ads in Rotterdam. Every report is checked by two team members before it appears. We never publish names, phone numbers or photos of people.</p>
+  </div>
+</section>
+
+<section class="section" id="radar">
+  <div class="wrap">
+    <div class="radar-grid">
+      <div class="radar-vis"><canvas id="radar-canvas" aria-hidden="true"></canvas></div>
+      <div>
+        <div class="search">
+          <label for="radar-q" class="sr-only">Search by area, street or pattern</label>
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <input class="input" id="radar-q" type="search" placeholder="Search area, street or trick (e.g. Western Union)" autocomplete="off">
+        </div>
+        <div class="chips" role="group" aria-label="Filter by status">
+          <button class="chipf" aria-pressed="true" data-status="all">All</button>
+          <button class="chipf" aria-pressed="false" data-status="confirmed">Confirmed by a check</button>
+          <button class="chipf" aria-pressed="false" data-status="reported">Reported</button>
+          <button class="chipf" aria-pressed="false" data-status="resolved">Resolved or incorrect</button>
+        </div>
+        <ul class="radar-list" id="radar-list" aria-live="polite"></ul>
+        <p class="example-note">Example entries to show how the radar works. Real reports appear after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight-top" id="report-scam">
+  <div class="wrap two-col">
+    <div>
+      <span class="eyebrow">Seen a scam?</span>
+      <h2 class="h-section" style="font-size:var(--step-3)">Report it. Help the next student.</h2>
+      <ul class="feature-list">
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><span><b>Checked before it appears</b><span>Two of us review every report. Only the area, the pattern and the date are published.</span></span></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-building"/></svg></span><span><b>Landlord, and this is wrong?</b><span>Use the same form. We answer within 5 working days and correct the status.</span></span></li>
+        <li><span class="ic"><svg aria-hidden="true"><use href="#i-warn"/></svg></span><span><b>Already paid?</b><span>Report it to the police and the Fraudehelpdesk, and call your bank right away.</span></span></li>
+      </ul>
+    </div>
+    <form class="form-card" data-simple-form novalidate>
+      <h3>Report a fake ad</h3>
+      <div class="field"><label for="rs-type">I am</label><select class="input" id="rs-type"><option>A student or parent reporting a scam</option><option>A landlord: this listing is wrong</option></select></div>
+      <div class="field"><label for="rs-area">Area or street (no house number needed)</label><input class="input" id="rs-area" type="text" required placeholder="e.g. Kralingen, Oostzeedijk"></div>
+      <div class="field"><label for="rs-what">What happened?</label><textarea class="input" id="rs-what" rows="4" required placeholder="e.g. asked for the deposit via Western Union before any viewing"></textarea></div>
+      <div class="field"><label for="rs-mail">Your email (never published)</label><input class="input" id="rs-mail" type="email" required></div>
+      <p class="err" role="alert"></p>
+      <button class="btn btn-cobalt" type="submit">Send report</button>
+      <div class="form-ok" hidden><svg aria-hidden="true"><use href="#i-check"/></svg>Thank you. Two of us will review it. In the live version this sends an email to the team.</div>
+    </form>
+  </div>
+</section>

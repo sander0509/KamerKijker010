@@ -1,0 +1,82 @@
+<section class="section book" id="book">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{root}}./">Home</a><span>/</span><span>Book a check</span></nav>
+    <span class="eyebrow">Book a check · takes 2 minutes</span>
+    <h1 class="h-section" data-split style="font-size:var(--step-4)">Send us the ad. We’ll go and look.</h1>
+    <div class="book-shell">
+      <aside class="book-aside">
+        <ol id="book-steps">
+          <li class="active"><span class="bn">1</span>Choose a check</li>
+          <li><span class="bn">2</span>The room and the landlord</li>
+          <li><span class="bn">3</span>Your details</li>
+          <li><span class="bn">4</span>Review and pay</li>
+        </ol>
+        <div class="assure">
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>Red flag in the online check? You don’t pay for the visit.</div>
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>No access to the room? Partial refund.</div>
+          <div><svg aria-hidden="true"><use href="#i-check"/></svg>Your data is deleted after 6 months.</div>
+        </div>
+        <div class="summary">
+          <div><span>Package</span><b id="sum-pkg">Room Check</b></div>
+          <div><span>Result</span><b id="sum-time">within 48 hours</b></div>
+          <div><span>Total incl. VAT</span><b class="total" id="sum-total">€59</b></div>
+          <div class="pay-logos" aria-label="Payment methods"><span>iDEAL</span><span>Card</span><span>Apple Pay</span><span>Google Pay</span></div>
+        </div>
+      </aside>
+      <form class="book-form" id="book-form" novalidate>
+        <fieldset data-step="1">
+          <legend>Which check do you need?</legend>
+          <div class="pkg-options">
+            <div class="pkg"><input type="radio" name="pkg" id="pkg-online" value="online"><label for="pkg-online"><b>Online Check <span>€19</span></b><span>Ad, owner, bank account, scam radar · 24 h</span></label></div>
+            <div class="pkg"><input type="radio" name="pkg" id="pkg-room" value="room" checked><label for="pkg-room"><em>Most popular</em><b>Room Check <span>€59</span></b><span>Plus a visit, video tour and report · 48 h</span></label></div>
+            <div class="pkg"><input type="radio" name="pkg" id="pkg-plus" value="plus"><label for="pkg-plus"><b>Room Check Plus <span>€89</span></b><span>Plus contract red flags and rent indication · 48 h</span></label></div>
+            <div class="pkg"><input type="radio" name="pkg" id="pkg-bundle" value="bundle"><label for="pkg-bundle"><b>3-Room Bundle <span>€149</span></b><span>Compare 3 rooms · within 5 days</span></label></div>
+          </div>
+        </fieldset>
+        <fieldset data-step="2" hidden>
+          <legend>The room and the landlord</legend>
+          <div class="field"><label for="ad-url">Link to the ad</label><input class="input" id="ad-url" type="url" inputmode="url" placeholder="https://www.facebook.com/groups/… or kamernet.nl/…" required></div>
+          <div class="field"><label for="address">Address of the room</label><input class="input" id="address" type="text" placeholder="Street, number, postcode, Rotterdam" required></div>
+          <div class="row-2">
+            <div class="field"><label for="ll-name">Landlord’s name (optional)</label><input class="input" id="ll-name" type="text" placeholder="As shown in the ad or chat"></div>
+            <div class="field"><label for="ll-phone">Landlord’s phone (optional)</label><input class="input" id="ll-phone" type="tel" placeholder="+31 6 …"></div>
+          </div>
+          <p class="err" id="err-2" role="alert"></p>
+        </fieldset>
+        <fieldset data-step="3" hidden>
+          <legend>Your details</legend>
+          <div class="row-2">
+            <div class="field"><label for="c-name">Your name</label><input class="input" id="c-name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="c-email">Email (we send the report here)</label><input class="input" id="c-email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="c-phone">WhatsApp number (optional, for quick questions)</label><input class="input" id="c-phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="p-email">Parent’s email (optional, they get the report too)</label><input class="input" id="p-email" type="email"></div>
+          <p class="err" id="err-3" role="alert"></p>
+        </fieldset>
+        <fieldset data-step="4" hidden>
+          <legend>Review and pay</legend>
+          <dl class="review" id="review"></dl>
+          <label class="check-row" for="agree"><input type="checkbox" id="agree"> <span>Start right away. I understand this is a visual and administrative check, not a guarantee, and I make the final decision myself.</span></label>
+          <p class="err" id="err-4" role="alert"></p>
+        </fieldset>
+        <div class="success" id="book-success" hidden>
+          <div class="seal"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>Booking received.</h3>
+          <p>In the live version you now pay with iDEAL, card or Apple Pay and get a confirmation email. We start the online check within 24 hours.</p>
+          <button class="btn btn-line" type="button" id="book-again">Book another check</button>
+        </div>
+        <div class="form-nav" id="form-nav">
+          <button class="btn btn-line" type="button" id="prev" hidden>Back</button>
+          <button class="btn btn-sun" type="submit" id="next" style="margin-left:auto">Continue <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section tight-top" style="padding-top:72px">
+  <div class="wrap faq-grid">
+    <div><span class="eyebrow">Before you pay</span><h2 class="h-section" style="font-size:var(--step-3)">Good to know.</h2></div>
+    <div class="faq-list" data-faq="guarantee,refund,video,data"></div>
+  </div>
+</section>
